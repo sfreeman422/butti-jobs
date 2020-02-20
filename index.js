@@ -4,10 +4,6 @@ const fs = require("fs");
 const url = "https://jobs.lever.co/peteforamerica";
 
 async function main() {
-  console.log(process.env.twilioSID);
-  console.log(process.env.twilioAuth);
-  console.log(process.env.to);
-  console.log(process.env.from);
   const twilioClient = new twilio(
     process.env.twilioSID,
     process.env.twilioAuth
@@ -60,6 +56,7 @@ async function main() {
     console.log("No new postings by number or title. Will not alert Lebage!");
   }
   await browser.close();
+  setTimeout(() => main(), 300000);
 }
 
 main();
