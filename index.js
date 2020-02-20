@@ -54,7 +54,8 @@ async function main() {
         to: process.env.to, // Text this number
         from: process.env.from // From a valid Twilio number
       })
-      .then(message => console.log(message.sid));
+      .then(message => console.log(message.sid))
+      .catch(e => console.error(e));
   } else {
     console.log("No new postings by number or title. Will not alert Lebage!");
   }
